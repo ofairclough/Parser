@@ -15,21 +15,7 @@
                 var fdw = moment(row.eq(2).text(), 'DD-MM-YYYY').format('MMMM DD YYYY')
                 var ldp = moment(row.eq(3).text(),'DD-MM-YYYY').format('MMMM DD YYYY');
                 var sn=row.eq(0).text();
-                
-                var input= moment(row.eq(5).text(),'DD-MM-YYYY');
-var ROErange= moment.range(fdw,ldp)
-                if (moment(ldp) > moment($('#BPC').val().format('MMMM D, YYYY'))) {
-                         
-                swal('Scenario X: the client has worked since BPC. Review the Claimant Reports in FTS against the ROE to determine if there are undeclared earnings.')
-                     $(this).append('Check ROE '+sn+ "" ).css('background-color','red')      
-                }
-                
-                
-                
-    
-                
-                
-                var rfsdata = row.eq(6).text();
+                 var rfsdata = row.eq(6).text();
                 if (rfsdata === "D") {
                     var rfs = "illness"
 
@@ -90,11 +76,34 @@ var ROErange= moment.range(fdw,ldp)
 
                 }
                 
+                var input= moment(row.eq(5).text(),'DD-MM-YYYY');
+var ROErange= moment.range(fdw,ldp)
+                if (moment(ldp) > moment($('#BPC').val().format('MMMM D, YYYY'))) {
+                         
+                swal('Scenario X: the client has worked since BPC. Review the Claimant Reports in FTS against the ROE to determine if there are undeclared earnings.')
+                     $(this).append('Check ROE '+sn+ "" ).css('background-color','red')  
+
+                     if (rfs!="Shortage of Work"  ){
+
+                      $(this).append(' The RFS is NOT shortage of work determine if it has been adjudicated ').css('background-color','yellow')
+
+                     }    
+                }
+                
+                
+                
+    
+                
+                
+               
                 $('#roeReview').append(
                 ' A Record of Employment from ' + employer + ' the first day worked is ' + fdw + '. The last day worked is ' + ldp +
                 '. The Reason for Separation is ' + rfs + '.')
   var $claimRanges=[];
                $('#previous').find('.prev').each(function(i,el){
+
+
+
                 var bpc=    $(this).find(":input:first").val()
                     var   lrw =$(this).find('.pLRW').val();
                     console.log(lrw+'LRW')
@@ -133,8 +142,10 @@ var ROErange= moment.range(fdw,ldp)
                     //*********check if ROE overlaps previous Benefit Period
                    if (ROErange.intersect($claimRanges)){
                        $(this).parent().addClass('has-error')
+
+                        swal(' Scenario 3: ROE Covers Benefit Period of a Previous BP!!')
                            $(this).append("Scenario 3: Review ROE Serial Number " +sn +" RFS is "+ rfs + " Employer is " +employer +" it intersects this Benefit Period."+"<br>" )
-                       swal(' Scenario 3: ROE Covers Benefit Period of a Previous BP!!')
+                      
                        
                    }
                    
@@ -360,8 +371,12 @@ $('input[name=missed],#BPC').datepicker({
                 selectOtherMonths: true,
                
                        changeMonth:true,
-                       changeYear:true
-                //
+                       changeYear:true,
+                             onClose: function(dateText, instance) {
+             var date = $.datepicker.parseDate(instance.settings.dateFormat, dateText, instance.settings);
+            date.setMonth(date.getMonth() + 6);
+
+            } //
 
             });
 $("#cat").change(function () {
@@ -585,29 +600,45 @@ $('#addBPC').click(function(){
                    $('.pBPC').datepicker({
                 dateFormat: 'MM d, yy',
                 stepMonths: 3,
-                defaultDate: "-10MM",
+               
                 numberOfMonths: 3,
                 showOtherMonths: true,
                 selectOtherMonths: true,
                
                        changeMonth:true,
-                       changeYear:true
+                       changeYear:true,
                 //
+beforeShow: function() {
+                    //get date startDate is set to
+                    var startDate = $("#BPC").datepicker('getDate', '-10MM');
+                    //if a date was selected else do nothing
 
+                    //startDate.setMonth(startDate.getMonth() + 1);
+                    $(this).datepicker('option', 'defaultDate', startDate);
+                    
+                }
             });
     
                      $('.pLRW').datepicker({
                 dateFormat: 'MM d, yy',
                 stepMonths: 3,
-                defaultDate: "-5MM",
+                
                 numberOfMonths: 3,
                 showOtherMonths: true,
                 selectOtherMonths: true,
                     selectYear:true,
                             changeMonth:true,
-                       changeYear:true
+                       changeYear:true,
                          
-                //
+               beforeShow: function() {
+                    //get date startDate is set to
+                    var startDate = $(this).prev().datepicker('getDate');
+                    //if a date was selected else do nothing
+
+                    //startDate.setMonth(startDate.getMonth() + 1);
+                    $(this).datepicker('option', 'defaultDate', startDate);
+                    
+                }
 
             });
     
@@ -620,9 +651,17 @@ $('#addBPC').click(function(){
                 selectOtherMonths: true,
                     selectYear:true,
                         changeMonth:true,
-                       changeYear:true
+                       changeYear:true,
                          
-                         
+                          beforeShow: function() {
+                    //get date startDate is set to
+                    var startDate = $(this).prev().datepicker('getDate', '-10MM');
+                    //if a date was selected else do nothing
+
+                    //startDate.setMonth(startDate.getMonth() + 1);
+                    $(this).datepicker('option', 'defaultDate', startDate);
+                    
+                }    
                 //
 
             });
