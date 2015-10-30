@@ -166,7 +166,7 @@ var ROErange= moment.range(fdw,ldp)
                    // console.log(jrange)
                         }
                    
-                         if (moment(input).isAfter(currentBPC) && rfs != "Shortage of Work" && ROErange.intersect(currentQpr)  ){
+                         if (moment(input).isAfter(currentBPC) && rfs != "Shortage of Work" && ROErange.intersect(currentQpr)&& ldp.isBefore(currentBP)) {
                    swal('Scenario 2  (ROE submitted after BPC RFS other than shortage of work')
                                               $(this).append("Scenario 2 Review ROE Serial Number " +sn +" RFS is "+ rfs + " it is was input after the CURRENT Benefit Period was established, and covers the QP (make sure it was adjudicated)"+"<br>" )
 
@@ -373,6 +373,7 @@ $("#cat").change(function () {
 $("#effortDate").change(function () {
     $("#effortType").focus();
 });
+
 
 $('#effortDate').datepicker({
     dateFormat: 'MM d, yy',
