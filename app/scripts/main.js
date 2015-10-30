@@ -20,8 +20,8 @@
 var ROErange= moment.range(fdw,ldp)
                 if (moment(ldp) > moment($('#BPC').val().format('MMMM D, YYYY'))) {
                          
-                swal('the client has worked since BPC. Review the Claimant Reports in FTS against the ROE to determine if there are undeclared earnings.')
-                           
+                swal('Scenario X: the client has worked since BPC. Review the Claimant Reports in FTS against the ROE to determine if there are undeclared earnings.')
+                     $(this).append('Check ROE '+sn+ "" ).css('background-color','red')      
                 }
                 
                 
@@ -102,13 +102,15 @@ var ROErange= moment.range(fdw,ldp)
                     var qp=$(this).find('.pQP').val()
                     var qpm= moment(qp).format('MM D, YYYY')
                     var dates= bpc +" to "+ lrw
-                    
+                    var currentBPC= moment($('#BPC').val().format('MMMM D, YYYY'))
                     var bpcm = moment(bpc,'MM D, YYYY' )
                     var lrwm = moment(lrw, 'MM D, YYYY')
                     var $claimRanges= moment.range(bpcm,lrwm)
                     console.log(qp+"previous QP started")
                     var $previousQPs=moment.range(qpm,bpc)
-                    
+                    var currentQPstart= moment(currentBPC).subtract(1,'year');
+                    console.log(currentQPstart)
+                    var currentQpr=moment.range(currentQPstart,currentBPC)
                     console.log($previousQPs)
                    /* if ( moment(ldp,'DD-MM-YYY').isBetween(moment(bpc).format('MM D, YYYY'),moment(lrw).format('MM D, YYYY') ))
                         
@@ -127,22 +129,22 @@ var ROErange= moment.range(fdw,ldp)
                             
                         }
                    */
-                    
+                   
                     //*********check if ROE overlaps previous Benefit Period
                    if (ROErange.intersect($claimRanges)){
                        $(this).parent().addClass('has-error')
-                           $(this).append("Review ROE Serial Number " +sn +" RFS is "+ rfs + " Employer is " +employer +" it intersects this Benefit Period."+"<br>" )
-                       swal(' Scenario 1 Benefit Period intersection on Previous Claim!!')
+                           $(this).append("Scenario 3: Review ROE Serial Number " +sn +" RFS is "+ rfs + " Employer is " +employer +" it intersects this Benefit Period."+"<br>" )
+                       swal(' Scenario 3: ROE Covers Benefit Period of a Previous BP!!')
                        
                    }
                    
                    //***********check for contentious RFS after establishment of current BPC
-                    var currentBPC= moment($('#BPC').val().format('MMMM D, YYYY'))
+                    
                     
                     console.log(rfsdata)
-                    if (input.isAfter(currentBPC) && rfsdata != "A"  ){
-                   swal(' Scenario 2 contentious RFS after current BPC')
-                                              $(this).append("Review ROE Serial Number " +sn +" RFS is "+ rfs + " it is was input after the current Benefit Period was established."+"<br>" )
+                    if (input.isAfter(currentBPC) && rfs != "Shortage of Work"  ){
+                   swal(' Scenario 1 contentious RFS during current claim (roe was input after BPC) after current BPC was established')
+                                              $(this).append("Scenario 1: Review ROE Serial Number " +sn +" RFS is "+ rfs + " it is was input after the current Benefit Period was established."+"<br>" )
 
                     console.log($($claimRanges))
                     //var jrange=JSON.stringify($range)
@@ -155,21 +157,29 @@ var ROErange= moment.range(fdw,ldp)
                    console.log(input)
                    
                    console.log(ROErange)
-                    if (moment(input).isAfter(bpc) && rfsdata != "Shortage of Work" && ROErange.intersect($previousQPs)  ){
-                   swal('Scenario 3 RFS during the QP of a Previous BP')
-                                              $(this).append("Review ROE Serial Number " +sn +" RFS is "+ rfs + " it is was input after this previous Benefit Period was established, and covers the QP (make sure it was adjudicated)"+"<br>" )
+                    if (moment(input).isAfter(bpc) && rfs != "Shortage of Work" && ROErange.intersect($previousQPs)  ){
+                   swal('Scenario 4 contentious RFS during the QP or BP of this Claim (ROE submitted after BPC')
+                                              $(this).append("Scenario 4 Review ROE Serial Number " +sn +" RFS is "+ rfs + " it is was input after this previous Benefit Period was established, and covers the QP (make sure it was adjudicated)"+"<br>" )
 
                     console.log($($claimRanges))
                     //var jrange=JSON.stringify($range)
                    // console.log(jrange)
                         }
                    
-                   
+                         if (moment(input).isAfter(currentBPC) && rfs != "Shortage of Work" && ROErange.intersect(currentQpr)  ){
+                   swal('Scenario 2  (ROE submitted after BPC RFS other than shortage of work'),
+                                              $(this).append("Scenario 2 Review ROE Serial Number " +sn +" RFS is "+ rfs + " it is was input after the CURRENT Benefit Period was established, and covers the QP (make sure it was adjudicated)"+"<br>" )
+
+                    console.log($($claimRanges))
+                    //var jrange=JSON.stringify($range)
+                   // console.log(jrange)
+                        }
                    
                    /// $($range).each(function(i, val ){
                         
                         
-//});
+//});  var   lrw =$(this).find('.pLRW').val();
+                   
                   
                         
                         
@@ -346,7 +356,11 @@ $('input[name=missed],#BPC').datepicker({
                 stepMonths: 3,
                 defaultDate: "-2MM",
                 numberOfMonths: 3,
-                showOtherMonths: true,
+              showOtherMonths, true,
+                selectOtherMonths: true,
+               
+                       changeMonth:true,
+                       changeYear:true
                 //
 
             });
