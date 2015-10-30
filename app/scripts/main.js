@@ -167,7 +167,7 @@ var ROErange= moment.range(fdw,ldp)
                         }
                    
                          if (moment(input).isAfter(currentBPC) && rfs != "Shortage of Work" && ROErange.intersect(currentQpr)  ){
-                   swal('Scenario 2  (ROE submitted after BPC RFS other than shortage of work'),
+                   swal('Scenario 2  (ROE submitted after BPC RFS other than shortage of work')
                                               $(this).append("Scenario 2 Review ROE Serial Number " +sn +" RFS is "+ rfs + " it is was input after the CURRENT Benefit Period was established, and covers the QP (make sure it was adjudicated)"+"<br>" )
 
                     console.log($($claimRanges))
