@@ -356,7 +356,7 @@ $('input[name=missed],#BPC').datepicker({
                 stepMonths: 3,
                 defaultDate: "-2MM",
                 numberOfMonths: 3,
-              showOtherMonths, true,
+              showOtherMonths: true,
                 selectOtherMonths: true,
                
                        changeMonth:true,
