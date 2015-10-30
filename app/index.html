@@ -1,0 +1,431 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Selective Interview Tool</title>
+
+    <!-- build:css styles/vendor.css -->
+    <link rel="stylesheet" type="text/css" href="../bower_components/normalize-css/normalize.css">
+
+<link rel="stylesheet" type="text/css" href="../bower_components/jquery-ui/themes/smoothness/jquery-ui.min.css">
+      
+
+  <link rel="stylesheet" type="text/css" href="../bower_components/bootstrap/dist/css/bootstrap.min.css">
+      <link rel="stylesheet" type="text/css" href="../bower_components/jasny-bootstrap/dist/css/jasny-bootstrap.min.css">
+      <link rel="stylesheet" type="text/css" href="../bower_components/jquery.steps/demo/css/jquery.steps.css">
+      <link rel="stylesheet" type="text/css" href="../bower_components/bootstrap-sweetalert/lib/sweet-alert.css">
+
+    
+    <!-- endbuild -->
+
+    <link rel="stylesheet" href="styles/main.css">
+
+    
+    <!-- build:js scripts/vendor/modernizr.js -->
+    <script src="../bower_components/modernizr/modernizr.js"></script>
+    <!-- endbuild -->
+    
+  </head>
+
+  <body>
+  
+
+  
+ <div class="navbar navbar-inverse navbar-fixed-top" id="navbar">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+
+            <div class="navbar-header">
+                <button class="navbar-toggle collapsed" data-="" data-target=
+                "#bs-example-navbar-collapse-1" type="button"><span class=
+                "sr-only">Toggle navigation</span> <span class=
+                "icon-bar"></span> <span class="icon-bar"></span> <span class=
+                "icon-bar"></span></button> <a class="navbar-brand .hidden-md"
+                href="#">Service Canada Ontario ISB</a>
+                
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+
+            <div class="collapse navbar-collapse" id=
+            "bs-example-navbar-collapse-1">
+               
+
+                <div class="navbar-inner">
+             
+                    <div class="container">
+                        <a class="brand" href="index.html"><img class="toplogo"
+                        src="images/splashsmall.png"></a>
+                        
+                        
+            
+                        <button class=
+                        "btn btn-default navbar-btn" id="refresh"  type="button" value="Refresh">Refresh
+                        <span class=
+                        "glyphicon glyphicon-refresh"></span></button> 
+                        <a href=
+                        "../../index.html">
+                            
+                            
+                        <button class="btn btn-default navbar-btn" id="home"
+                        type="button">Home Page <span class=
+                        "glyphicon glyphicon-home"></span></button></a>
+
+                        <ul class="nav navbar-nav navbar-right">
+                            
+                            
+                            <li style="list-style: none; display: inline">
+                                <ul class="nav navbar-nav">
+                                    <li class="dropdown">
+                                        <a class="dropdown-toggle" data-toggle=
+                                        "dropdown" href="#">Team Tools
+                                        <span class="caret"></span></a>
+
+                                        <ul class="dropdown-menu">
+                                        
+                                            <li class="local">
+                                                <a href=
+                                                "http://dialogue/grp/CIS-SIP/default.aspx"
+                                                target="_blank">CIS
+                                                Sharepoint</a>
+                                            </li>
+
+                                            <li class="local">
+                                                <a href=
+                                                "file://Hrdc-drhc.net/on/IS-SI/_Collaboration/_Restr/CIS-Reports/Anomalies-Issues" title="Submit a Reccomendation to improve Client Service">
+                                                Anomaly Reports title</a>
+                                            </li>
+
+                                            <li class="local">
+                                                <a href=
+                                                "file://Hrdc-drhc.net/on/IS-SI/Templates/Cis_Anomaly04092013.oft"
+                                                target="_blank">Email Anomaly
+                                                Template</a>
+                                            </li>
+
+                                            <li class="local">
+                                                <a href=
+                                                "http://dialogue/grp/CIS-SIP/ProceduresNotices/Forms/AllItems.aspx"
+                                                target=
+                                                "_blank">Procedures/Notices</a>
+                                            </li>
+
+                                            <li class="local">
+                                                <a href=
+                                                "http://dialogue/grp/CIS-SIP/FormsTemplates/Forms/AllItems.aspx"
+                                                target=
+                                                "_blank">Templates/Forms</a>
+                                            </li>
+							
+                                              <li>
+                                                <a href=
+                                                "../../Release Notes/index.html"
+                                                target=
+                                                "_blank" title="View the Most Recent Release Notes for the CCAJ Tool Kit">*Tool Kit Release Notes*</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li class="dropdown">
+                                <a class="dropdown-toggle" data-toggle=
+                                "dropdown" href="#">References<span class=
+                                "caret"></span></a>
+
+                                <ul class="dropdown-menu">
+                                    <li class="dropdown-header">Internal
+                                    Resources</li>
+
+                                    <li class="divider"></li>
+
+                                    <li>
+                                        <a href=
+                                        "http://servicecanada.prv/eng/ei/reference-material/ic-manual/index.shtml"
+                                        target="_blank">Integrity Operations
+                                        Manual (IOM)</a>
+                                    </li>
+
+<li><a href="http://ort.prv/ort/task.page?vp=/templatedata/ei/task/data/aic_ccaj.xml" target="_blank" title="PPSB Adjudication Criteria">ORT-CCAJ</a> </li>
+<li><a href="http://servicecanada.prv/eng/ei/reference-material/benefit-manual/CCAJ_phase1.shtml#guidelines" target="_blank"title="PPSB Adjudication Criteria">Benefit Manual CCAJ</a></li>
+
+<li>
+<a href="http://servicecanada.prv/eng/ei/reference-material/ic-manual/chapter18.shtml" target="_blank">IOM Chapter 18-CIS </a>
+</li>
+<li>
+<a href="http://servicecanada.prv/eng/ei/reference-material/ic-manual/chapter19.shtml" target="_blank">IOM Chapter 19-Selective Interviews </a>
+</li>
+<li>
+<a href="http://servicecanada.prv/eng/ei/reference-material/ic-manual/chapter61.shtml" target="_blank">IOM Chapter 61-SBCR </a>
+</li>
+
+
+
+                                    <li>
+                                        <a href="http://servicecanada.prv/eng/ei/reference-material/bulletins-circulars/integrity-operations/index.shtml"
+                                        target="_blank">Integrity Operations
+                                        Circulars</a>
+                                    </li>
+
+                                    <li>
+                                        <a href=
+                                        "http://www.servicecanada.gc.ca/eng/ei/digest/chp10.shtml"
+                                        target="_blank">E.I. Digest Chapter
+                                        10-Availability</a>
+                                    </li>
+<li class="divider"></li>
+                                    <li>
+                                        <a href=
+                                        "http://servicecanada.prv/eng/isb/directorates/io/checklists-instructions/index.shtml"
+                                        target="_blank">Integrity
+                                        Checklists</a>
+                                    </li>
+
+                                    <li>
+                                        <a href=
+                                        "http://ort.prv/ort/index.page?locale=en_CA"
+                                        target="_blank">Online Reference
+                                        Tool</a>
+                                    </li>
+
+
+
+                                    <li>
+                                        <a href=
+                                        "http://agora.on.prv/english/integrity/itips_ei/"
+                                        target="_blank">I- Tips</a>
+                                    </li>
+
+                                    <li>
+                                        <a href=
+                                        "http://crt-orc.prv/content/cat.aspx?lang=en&catid=4&sp=2"
+                                        target="_blank">Common Reference
+                                        Tool</a>
+                                    </li>
+
+                                    <li>
+                                        <a href=
+                                        "http://servicecanada.prv/eng/ei/reference-material/week-code/index.shtml"
+                                        target="_blank">Code Weeks
+                                        Calendars</a>
+                                    </li>
+
+                                    <li>
+                                        <a href=
+                                        "http://servicecanada.prv/eng/ei/reference-material/policy-legislation/levels_decision.shtml"
+                                        target="_blank">National Policy on
+                                        Levels of Decision</a>
+                                    </li>
+
+                                    <li class="divider"></li>
+
+                                    <li class="dropdown-header">Client
+                                    Resources</li>
+
+                                    <li class="divider"></li>
+
+                                    <li>
+                                        <a href=
+                                        "http://www.servicecanada.gc.ca/eng/sc/ei/ccaj/claimant.shtml"
+                                        title="Search: CCAJ Categories"
+                                        target="_blank">CCAJ Categories</a>
+                                    </li>
+
+                                    <li class="esp">
+                                        <a href=
+                                        "http://feats.findhelp.ca/eng/search.html"
+                                        target="_blank" title=
+                                        "Tel:1-800-387-5656 TTY-1 866-533-6339. Navigation: Search Employment Ontario , Bottom Left Corner of Home Page">Service
+                                        Ontario Employment Service
+                                        Providers</a>
+                                    </li>
+
+                                    <li>
+                                        <a href=
+                                        "http://laws-lois.justice.gc.ca/eng/regulations/SOR-96-332/page-5.html#h-5"
+                                        target="_blank" title=
+                                        "Search: EIR 9.001">EI Regulations-Suitable Employment</a>
+                                    </li>
+  <li>
+                                        <a href=
+                                        "http://www.servicecanada.gc.ca/eng/ei/digest/10_2_0.shtml"
+                                        target="_blank" title=
+                                        "Search: EI Digest Chapter 10">EI Digest-Availability</a>
+                                    </li>
+                                    
+                                    <li>
+                                        <a href=
+                                        "http://www.jobbank.gc.ca/home-eng.do?lang=eng"
+                                        target="_blank">Job Bank</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                                            <div class="jumb"><h1 class="headertitle">Test </h1>
+     </div>
+                    </div><!-- /.navbar-collapse -->
+                </div><!-- /.container-fluid -->
+            </div>
+        </div>
+    </div>
+
+
+  
+
+
+<div class="container-fluid">
+<div class="form-horizontal col-md-6 left" id="bundem">
+
+ 
+<!-- Form Name -->
+
+ 
+<!-- Text input-->
+<div class="form-group" >
+  <label class="col-md-4 control-label" for="BPC">BPC</label> 
+  <div class="col-md-4">
+  <input id="BPC" name="BPC" placeholder="" class="form-control input-md" type="text">
+ 
+  </div>
+</div>
+    
+    <label class="col-md-4 control-group" for="addBPC">Add Previous BPC</label><button id="addBPC" class ="btn btn-default"> Add</button>
+    
+    <button id="parse" class="btn btn-success">Click Here to Review</button>
+<div id="previous"></div>
+<!-- Text input-->
+
+
+
+<!-- Text input-->
+
+      </div>
+    </div>
+<div class="col-md-6 right">
+
+      <div class="container-fluid">
+        
+    
+
+
+
+
+
+        
+          <!-- Multiple Radios (inline) -->
+  
+
+          <H2>Copy and Paste ROE's from RCM(including header) Here</H2>
+          <div class="editable" id="initial">      <table class="small table table-bordered table-condensed" id="grdSearchResults" style="width: 100%; border-collapse: collapse; -ms-word-wrap: break-word;" border="1" rules="all" cellspacing="0"><tbody><tr style="color: white; font-weight: bold; background-color: rgb(20, 96, 148);"><td title="Serial Number" align="center" valign="top" style="width: 80px;"><a style="color: white;" href="javascript:__doPostBack('ctl00$ContentPlaceHolder1$grdSearchResults$ctl01$ctl00','')"><u>SN</u></a></td><td align="center" valign="top"><a style="color: white;" href="javascript:__doPostBack('ctl00$ContentPlaceHolder1$grdSearchResults$ctl01$ctl01','')"><u>Employer</u></a></td><td title="First Day Worked / Trip Start Date (dd-mm-yyyy)" align="center" valign="top" style="width: 100px;"><a style="color: white;" href="javascript:__doPostBack('ctl00$ContentPlaceHolder1$grdSearchResults$ctl01$ctl02','')"><u>FDW / TSD</u></a></td><td title="Last Day for Which Paid / Trip End Date (dd-mm-yyyy)" align="center" valign="top" style="width: 100px;"><a style="color: white;" href="javascript:__doPostBack('ctl00$ContentPlaceHolder1$grdSearchResults$ctl01$ctl03','')"><u>LDP / TED</u></a></td><td title="Date Modified (dd-mm-yyyy)" align="center" valign="top" style="width: 100px;"><a style="color: white;" href="javascript:__doPostBack('ctl00$ContentPlaceHolder1$grdSearchResults$ctl01$ctl04','')"><u>Modified</u></a></td><td title="Date Input (dd-mm-yyyy)" align="center" valign="top" style="width: 100px;"><a style="color: white;" href="javascript:__doPostBack('ctl00$ContentPlaceHolder1$grdSearchResults$ctl01$ctl05','')"><u>Input</u></a></td><td title="Reason for Separation" align="center" valign="top" style="width: 40px;"><a style="color: white;" href="javascript:__doPostBack('ctl00$ContentPlaceHolder1$grdSearchResults$ctl01$ctl06','')"><u>RFS</u></a></td><td title="Audit Trail" align="center" valign="top" style="width: 40px;"><a style="color: white;" href="javascript:__doPostBack('ctl00$ContentPlaceHolder1$grdSearchResults$ctl01$ctl07','')"><u>Audit</u></a></td><td title="Employment History File" align="center" valign="top" style="width: 40px;"><a style="color: white;" href="javascript:__doPostBack('ctl00$ContentPlaceHolder1$grdSearchResults$ctl01$ctl08','')"><u>EHF</u></a></td></tr><tr style="font-weight: bold;"><td align="left"><a style="text-decoration: underline;" href="javascript:__doPostBack('ctl00$ContentPlaceHolder1$grdSearchResults$ctl02$ctl00','')"><font color="#0066cc">S11287849</font></a></td><td align="left"><span style="text-decoration: none;">EMPLOYER X</span></td><td align="center"><span style="text-decoration: none;">03-11-2008</span></td><td align="center"><span style="text-decoration: none;">02-06-2015</span></td><td align="center"><span style="text-decoration: none;">08-10-2015</span></td><td align="center"><span style="text-decoration: none;">08-10-2015</span></td><td align="center"><span title="Illness or injury" style="text-decoration: none;">D</span></td><td align="center"></td><td align="center"><input name="ctl00$ContentPlaceHolder1$grdSearchResults$ctl02$ctl08" title="No actuals" class="EHF" style="border-width: 0px;" type="image" alt="No actuals" src="http://rcm-msr.prv/rcm/(S(oznieu0i4vawmusw5egfjmzk))/Images/check_empty.bmp"></td></tr><tr style="font-weight: bold;"><td align="left"><a style="text-decoration: underline;" href="javascript:__doPostBack('ctl00$ContentPlaceHolder1$grdSearchResults$ctl03$ctl00','')"><font color="#0066cc">W28886998</font></a></td><td align="left"><span style="text-decoration: none;">The button Factory</span></td><td align="center"><span style="text-decoration: none;">02-05-2011</span></td><td align="center"><span style="text-decoration: none;">18-07-2013</span></td><td align="center"><span style="text-decoration: none;">25-07-2013</span></td><td align="center"><span style="text-decoration: none;">25-07-2013</span></td><td align="center"><span title="Illness or injury" style="text-decoration: none;">D</span></td><td align="center"></td><td align="center"><input name="ctl00$ContentPlaceHolder1$grdSearchResults$ctl03$ctl08" title="No actuals" class="EHF" style="border-width: 0px;" type="image" alt="No actuals" src="http://rcm-msr.prv/rcm/(S(oznieu0i4vawmusw5egfjmzk))/Images/check_empty.bmp"></td></tr><tr style="font-weight: bold;"><td align="left"><a style="text-decoration: underline;" href="javascript:__doPostBack('ctl00$ContentPlaceHolder1$grdSearchResults$ctl04$ctl00','')"><font color="#0066cc">W20675458</font></a></td><td align="left"><span style="text-decoration: none;">The Widget Factory</span></td><td align="center"><span style="text-decoration: none;">25-09-2003</span></td><td align="center"><span style="text-decoration: none;">28-04-2011</span></td><td align="center"><span style="text-decoration: none;">08-12-2011</span></td><td align="center"><span style="text-decoration: none;">08-12-2011</span></td><td align="center"><span title="Quit / Special Condition not selected" style="text-decoration: none;">E</span></td><td align="center"></td><td align="center"><input name="ctl00$ContentPlaceHolder1$grdSearchResults$ctl04$ctl08" title="No actuals" class="EHF" style="border-width: 0px;" type="image" alt="No actuals" src="http://rcm-msr.prv/rcm/(S(oznieu0i4vawmusw5egfjmzk))/Images/check_empty.bmp"></td></tr></tbody></table></div>
+      
+          <!-- Multiple Radios -->
+   
+      
+<h2>Output</h2>
+   <div class="editable" id="selectvQ"></div>
+                  <div id="example-vertical">
+                      <h3>Selective Question 1</h3>
+                      <section>
+                          <p>What methods do you use to look for work? </p>
+
+                       <p>How many employers do you contact per week on average, in your search for work?</p>
+                          
+                        
+                          <p>State the LOWEST rate of pay you are prepared to accept for the types of work you are seeking.</p>
+                          
+                          
+                          <p>Please list the days of the week and hours each day that you are available for work? </p>
+                          
+                          <p>Are you seeking full-time work?   
+
+If yes, how many hours and days per week. 
+</p>
+                      </section>
+                      <h3>Selective Question 2</h3>
+                      <section>
+                          <p>Here is Q 2.</p>
+                      </section>
+                      <h3>Selective Question 3</h3>
+                      <section>
+                          <p>The next and previous buttons </p>
+                      </section>
+                  </div>
+              </div>
+              <label>Q & A</label>
+              <div class="editable"  id="dynamic"></div>
+              <label>Closing Notes</label>
+              <div class="editable" id="closing"></div>
+              <form class="form-horizontal">
+                  <fieldset>
+                      <!-- Form Name -->
+                      <legend>Outcome</legend>
+                      <!-- Multiple Radios -->
+                      <div class="form-group">
+                          <label class="col-md-4 control-label" for="readback">When the conversation was read back to the client, did they client agree with Officer's notes?</label>
+                          <div class="col-md-4">
+                              <div class="radio">
+                                  <label for="readback-0">
+                                      <input name="readback" id="readback-0" value='The Officer read back the conversation to the client, and asked if the client agreed with the information as dictated. The client answered "yes".' type="radio">
+                                      Yes
+                                  </label>
+                              </div>
+                              <div class="radio">
+                                  <label for="readback-1">
+                                      <input name="readback" id="readback-1" value='The Officer read back the conversation to the client, and asked if the client agreed with the information as dictated. The client answered "no".' type="radio">
+                                      No
+                                  </label>
+                              </div>
+                          </div>
+                      </div>
+
+                      <!-- Multiple Radios -->
+                      <div class="form-group">
+                          <label class="col-md-4 control-label" for="outcome">The client was advised that the outcome of the Selective Interview was</label>
+                          <div class="col-md-4">
+                              <div class="radio">
+                                  <label for="outcome-0">
+                                      <input name="outcome" id="outcome-0" value="that case was in order." checked="checked" type="radio">
+                                      Case in Order
+                                  </label>
+                              </div>
+                              <div class="radio">
+                                  <label for="outcome-1">
+                                      <input name="outcome" id="outcome-1" value="that the Integrity Officer will be forwarding this information to a level 2 adjudicator for review." type="radio">
+                                      Referral to Level 2 Adjudication
+                                  </label>
+                              </div>
+                          </div>
+                      </div>
+                  </fieldset>
+                  <button type="button" id="consolidate" class="btn btn-info btn-block">Consolidate Notes</button>
+              </form>
+              <div class="container" id="output">
+              </div>
+          </div>
+ <!-- build:js scripts/main.js -->
+   
+
+<script src="../bower_components/jquery/dist/jquery.min.js"></script>
+  
+<script src="../bower_components/jquery-ui/jquery-ui.min.js"></script>
+    <script src="../bower_components/jquery.steps/build/jquery.steps.min.js"></script>
+
+      <script>
+      $.widget.bridge('uibutton', $.ui.button);
+      $.widget.bridge('uitooltip', $.ui.tooltip);
+
+      </script>
+<script src="../bower_components/moment/moment.js"></script>
+  <script src="../bower_components/moment-range/dist/moment-range.min.js"></script>
+              <script src="../bower_components/jquery-ui/jquery-ui.min.js"></script>      
+    <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+   <!-- <script src="../bower_components/nasny-bootstrap/dist/js/jasny-bootstrap.min.js"></script>-->
+
+    <script src="../bower_components/bootstrap-sweetalert/lib/sweet-alert.js"></script>
+
+  <script src="scripts/main.js"></script>
+    <!-- endbuild -->
+    
+  </body>
+</html>

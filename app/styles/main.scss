@@ -1,0 +1,201 @@
+/*****************************************************************************
+roeparse
+******************************************************************************/
+
+
+
+
+
+
+
+/*****************************************************************************
+  Base Styles
+******************************************************************************/
+.left{
+    
+    float:left;
+}
+.right{
+ float:right;   
+    
+}
+#selectiveQ{
+    
+    position: fixed !important;
+    
+    
+}
+#working{
+    display:block;
+
+}
+
+#calcu{
+
+
+float:right;
+
+}
+#prewarnings{
+
+
+    height: 100px; }
+  
+
+
+.pad{
+
+    padding:0px;
+
+}
+.ui-datepicker-trigger{
+    border:none;
+padding: 6px 12px;
+}
+
+#rass{
+margin-bottom: 40px
+}
+
+#missedsessions{
+
+display:none;
+}
+
+
+#purpose{
+
+  display:none;
+}
+.popup{
+
+color:red;
+
+}
+
+body {
+
+padding-top: 200px;
+padding-bottom: 70px;
+
+}
+
+#refresh,#home
+{
+
+float: right;
+
+}
+
+#timestart
+
+{float: right;
+
+}
+
+div.editable {
+    width: 100%;
+    height:auto;
+    min-height: 150px;
+    border: 4px solid #ccc;
+    padding: 5px;
+    background-color: white;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+}
+
+
+/*NAVBAR*/
+.navbar{
+    
+    display: none;
+}
+.navbar-btn
+{
+  margin-left: 10px
+}
+
+.navbar-inverse .navbar-btn {
+  background-color: #222222;
+  border-color: #333333;
+  border-width: 3px;
+  color: #999999;
+}
+.navbar-inverse .navbar-btn:hover {
+  color: #ffffff;
+  background-color: #333333;
+}
+
+.navbar-btn
+{
+  margin-left: 10px
+}
+
+.navbar-inverse .navbar-btn {
+  background-color: #222222;
+  border-color: #333333;
+  border-width: 3px;
+  color: #999999;
+}
+.navbar-inverse .navbar-btn:hover {
+  color: #ffffff;
+  background-color: #333333;
+}
+.jumb{
+
+    display:inline-block;
+  background: #020031;
+  background: -moz-linear-gradient(45deg, #020031 0%, #6d3353 100%);
+  background: -webkit-gradient(linear, left bottom, right top, color-stop(0%,#020031), color-stop(100%,#6d3353));
+  background: -webkit-linear-gradient(45deg, #020031 0%,#6d3353 100%);
+  background: -o-linear-gradient(45deg, #020031 0%,#6d3353 100%);
+  background: -ms-linear-gradient(45deg, #020031 0%,#6d3353 100%);
+  background: linear-gradient(45deg, #020031 0%,#6d3353 100%);
+  -webkit-box-shadow: inset 0 3px 7px rgba(0,0,0,.2), inset 0 -3px 7px rgba(0,0,0,.2);
+  -moz-box-shadow: inset 0 3px 7px rgba(0,0,0,.2), inset 0 -3px 7px rgba(0,0,0,.2);
+  box-shadow: inset 0 3px 7px rgba(0,0,0,.2), inset 0 -3px 7px rgba(0,0,0,.2);
+/*background: url(../images/purpleie8gradient.jpg); */
+margin-bottom: 0px;
+padding-top: .5em;
+padding-left:2em;
+padding-right:2em;
+float:right;
+-webkit-box-shadow: inset 1px 2px 33px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: inset 1px 2px 33px 0px rgba(0,0,0,0.75);
+box-shadow: inset 1px 2px 33px 0px rgba(0,0,0,0.75);
+
+
+}
+
+.toplogo {
+    display: inline;
+    margin-right: 10px;
+    max-height:50px;
+    width: auto;
+    height: auto;
+}
+
+
+h1.headertitle{
+ color:white;
+}
+
+
+
+
+/*****************************************************************************
+  Layout Styles
+******************************************************************************/
+
+
+
+
+/*****************************************************************************
+  Module Styles
+******************************************************************************/
+
+
+
+
